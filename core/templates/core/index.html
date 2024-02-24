@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block additional_css %}
+    <link rel="stylesheet" href="{% static 'css/core_button_style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <span>Hello, {{ user.username }}!</span>
+    <br>
+    <a href="{% url 'users:logout' %}" class="btn">Logout</a>
+{% else %}
+    <a href="{% url 'users:login-register' %}" class="btn">Go to Login</a>
+{% endif%}
+
+
+
+{% endblock %}
