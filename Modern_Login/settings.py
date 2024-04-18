@@ -7,10 +7,12 @@ SECRET_KEY = 'django-insecure-4+#7d7dsgi$dx_91)(mq(gssf_@8ik1ka#e6l&-2^azefi+-ba
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'localhost',
     '127.0.0.1',
     '0.0.0.0',
 ]
 INTERNAL_IPS = [
+    'localhost',
     '127.0.0.1',
     '0.0.0.0',
 ]
@@ -73,6 +75,14 @@ DATABASES = {
         'PORT': 5432,
     }
 }
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': 'redis://redis_cache:6379',
+    }
+}
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -110,4 +120,8 @@ AUTHENTICATION_BACKENDS = [
     'users.authenticate.EmailAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
+
 AUTH_USER_MODEL = 'users.User'
+
+CACHE_MIDDLEWARE_ALIAS = 'default'
+CACHE_MIDDLEWARE_KEY_PREFIX = 'Modern-Login'

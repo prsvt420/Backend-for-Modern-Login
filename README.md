@@ -6,6 +6,7 @@ Source code HTML JS CSS - https://github.com/AsmrProg-YT/Modern-Login
 - Python
 - Django
 - PostgreSQL
+- Redis
 - CSS
 - HTML
 - JavaScript
