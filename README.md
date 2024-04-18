@@ -9,17 +9,10 @@ Source code HTML JS CSS - https://github.com/AsmrProg-YT/Modern-Login
 - CSS
 - HTML
 - JavaScript
+- Docker
 
-## Installation
+## Installation & Running
 ```
-pip install poetry
-poetry env use python
-poetry shell
-poetry install
-```
-
-## Running
-
-```
-poetry run python manage.py runserver
+docker-compose up
+docker-compose exec web_app poetry run python manage.py migrate
 ```
